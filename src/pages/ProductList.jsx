@@ -49,7 +49,14 @@ export default function ProductList() {
               <Table.Cell>{product.quantityPerUnit}</Table.Cell>
               <Table.Cell>{product.category.categoryName}</Table.Cell>
               <Table.Cell>
-                <Button onClick={()=>handleAddToCart(product)}>Sepete ekle</Button>
+
+
+                <Button size="medium" animated='vertical' onClick={() => handleAddToCart(product)} color="green">
+                  <Button.Content visible >Sepete Ekle</Button.Content>
+                  <Button.Content hidden>
+                    <Icon name='shop' />
+                  </Button.Content>
+                </Button>
               </Table.Cell>
             </Table.Row>
           ))}
