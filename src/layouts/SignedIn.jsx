@@ -16,5 +16,3 @@ export default function SignedIn({signOut}) {
         </div>
     )
 }
-
-//22.50 Dersteyiz
