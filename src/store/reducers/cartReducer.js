@@ -2,7 +2,7 @@ import { ADD_TO_CART, REMOVE_FROM_CART } from "../actions/cartActions";
 import { cartItems } from "../initialValues/cartItems";
 
 const initialState = {
-  cartItems: cartItems,
+  cartItems: cartItems
 };
 
 export default function cartReducer(state = initialState, { type, payload }) {
@@ -16,15 +16,20 @@ export default function cartReducer(state = initialState, { type, payload }) {
         };
       } else {
         return {
-          ...state,
-          cartItems: [...state.cartItems, { quantity: 1, product: payload }],
+          // Sepette daha önce bu üründen yoksa
+          // cartItems a veri ekleme 
+          ...state, // bu yazılmasada olur. 
+          cartItems: [...state.cartItems, { quantity: 1, product: payload }]
         };
       }
 
     case REMOVE_FROM_CART:
       return {
+        // ürünü sepetten siler 
+        // Ürün adetini azaltma yok burda o yapılacak
         ...state,
-        cartItems: state.cartItems.filter((c) => c.product.id !== payload.id),
+        cartItems: state.cartItems.filter((c) => c.product.id !== payload.id)
+        // silinecek ürün haric diğer ürünleri yeni bir diziye aktarır.
       };
     default:
       return state;

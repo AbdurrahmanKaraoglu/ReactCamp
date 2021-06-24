@@ -23,6 +23,10 @@ export default function ProductList() {
     toast.success(`${product.productName} sepete eklendi!`)
   };
 
+  // function name(params) {
+
+  // }
+
   return (
     <div>
       <Table celled>
@@ -48,17 +52,24 @@ export default function ProductList() {
               <Table.Cell>{product.unitsInStock}</Table.Cell>
               <Table.Cell>{product.quantityPerUnit}</Table.Cell>
               <Table.Cell>{product.category.categoryName}</Table.Cell>
+
               <Table.Cell>
 
-
-                <Button size="medium" animated='vertical' onClick={() => handleAddToCart(product)} color="green">
+                <Button
+                  size="medium"
+                  animated='vertical'
+                  onClick={() => handleAddToCart(product)}
+                  color="green"
+                >
                   <Button.Content visible >Sepete Ekle</Button.Content>
                   <Button.Content hidden>
                     <Icon name='shop' />
                   </Button.Content>
                 </Button>
+
               </Table.Cell>
             </Table.Row>
+
           ))}
         </Table.Body>
 

@@ -15,3 +15,5 @@ export function removeFromCart(product){
         payload: product
     }
 }
+
+// sepete ekleme ve çıkarma işlemleri
